@@ -12,3 +12,13 @@ class Solution(object):
 			temp_nums = nums[next_index:]
 			if rest in temp_nums:
 				return (nums.index(i),next_index+temp_nums.index(rest))
+				
+	def twoSum(self, nums, target):
+		
+		dict={}
+		
+		for i in range(len(nums)):
+			if target - nums[i] not in dict:
+				dict[nums[i]] = i
+			else:
+				return [dict[target-nums[i]],i]
